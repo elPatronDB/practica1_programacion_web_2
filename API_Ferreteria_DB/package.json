@@ -1,0 +1,12 @@
+{
+  "name": "api-ferreteria",
+  "version": "1.0.0",
+  "description": "API Backend, manejo de datos de una ferretería",
+  "main": "server.js",
+  "repository": "https://github.com/elPatronDB/practica1_programacion_web_2",
+  "author": "Diego Bran",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

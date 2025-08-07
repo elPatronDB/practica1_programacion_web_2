@@ -1,0 +1,12 @@
+[
+  {"id": "SUP-1", "name": "Distribuidora Ferretera SA", "contact": {"email": "contacto@ferretera.com", "phone": "555-0101"}, "address": "Calle Principal 123, Ciudad"},
+  {"id": "SUP-2", "name": "Herramientas Globales", "contact": {"email": "ventas@herramientasglobales.com", "phone": "555-0102"}, "address": "Avenida Central 456, Ciudad"},
+  {"id": "SUP-3", "name": "Suministros Industriales", "contact": {"email": "info@suministrosind.com", "phone": "555-0103"}, "address": "Calle Industrial 789, Ciudad"},
+  {"id": "SUP-4", "name": "Pinturas y Colores", "contact": {"email": "ventas@pinturasycolores.com", "phone": "555-0104"}, "address": "Avenida Colores 101, Ciudad"},
+  {"id": "SUP-5", "name": "FerreMax", "contact": {"email": "contacto@ferremax.com", "phone": "555-0105"}, "address": "Calle Comercio 202, Ciudad"},
+  {"id": "SUP-6", "name": "Todo Herramientas", "contact": {"email": "soporte@todoherramientas.com", "phone": "555-0106"}, "address": "Avenida Progreso 303, Ciudad"},
+  {"id": "SUP-7", "name": "Clavos y Más", "contact": {"email": "ventas@clavosymas.com", "phone": "555-0107"}, "address": "Calle Fábrica 404, Ciudad"},
+  {"id": "SUP-8", "name": "Herramientas Élite", "contact": {"email": "info@herramientaselite.com", "phone": "555-0108"}, "address": "Avenida Élite 505, Ciudad"},
+  {"id": "SUP-9", "name": "Suministros Pro", "contact": {"email": "contacto@suministrospro.com", "phone": "555-0109"}, "address": "Calle Pro 606, Ciudad"},
+  {"id": "SUP-10", "name": "FerreTotal", "contact": {"email": "ventas@ferretotal.com", "phone": "555-0110"}, "address": "Avenida Total 707, Ciudad"}
+]

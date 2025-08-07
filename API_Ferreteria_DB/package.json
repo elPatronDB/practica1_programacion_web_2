@@ -6,6 +6,7 @@
   "repository": "https://github.com/elPatronDB/practica1_programacion_web_2",
   "author": "Diego Bran",
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "express": "^5.1.0"
   }

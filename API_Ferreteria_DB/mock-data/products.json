@@ -1,0 +1,12 @@
+[
+  {"id": "PRD-1", "name": "Martillo", "description": "Martillo de acero reforzado", "price": 15.99, "stock": 50, "category": "Herramientas", "supplierId": "SUP-1"},
+  {"id": "PRD-2", "name": "Destornillador", "description": "Juego de destornilladores 6 piezas", "price": 12.50, "stock": 30, "category": "Herramientas", "supplierId": "SUP-2"},
+  {"id": "PRD-3", "name": "Taladro", "description": "Taladro eléctrico de 500W", "price": 45.00, "stock": 20, "category": "Eléctricos", "supplierId": "SUP-1"},
+  {"id": "PRD-4", "name": "Clavos 2 pulgadas", "description": "Caja de 100 clavos galvanizados", "price": 5.99, "stock": 100, "category": "Fijaciones", "supplierId": "SUP-3"},
+  {"id": "PRD-5", "name": "Pintura Blanca", "description": "Lata de pintura acrílica 1 galón", "price": 25.00, "stock": 40, "category": "Pinturas", "supplierId": "SUP-2"},
+  {"id": "PRD-6", "name": "Llave Inglesa", "description": "Llave ajustable de 8 pulgadas", "price": 18.75, "stock": 25, "category": "Herramientas", "supplierId": "SUP-1"},
+  {"id": "PRD-7", "name": "Tornillos 3 pulgadas", "description": "Caja de 50 tornillos de acero", "price": 6.50, "stock": 80, "category": "Fijaciones", "supplierId": "SUP-3"},
+  {"id": "PRD-8", "name": "Sierra Manual", "description": "Sierra de mano de 24 pulgadas", "price": 22.00, "stock": 15, "category": "Herramientas", "supplierId": "SUP-1"},
+  {"id": "PRD-9", "name": "Cinta Métrica", "description": "Cinta de medir de 5 metros", "price": 8.99, "stock": 60, "category": "Herramientas", "supplierId": "SUP-2"},
+  {"id": "PRD-10", "name": "Brocha", "description": "Brocha de 2 pulgadas para pintura", "price": 3.50, "stock": 70, "category": "Pinturas", "supplierId": "SUP-2"}
+]

@@ -1,29 +1,73 @@
-import { v4 as uuidv4 } from 'uuid';
-import products from '../mock-data/products.json' assert { type: 'json' };
-import suppliers from '../mock-data/suppliers.json' assert { type: 'json' };
+import { products } from  '../mock-data/products.json' assert { type: 'json' };
 
+
+// GET - Productos
 export const getProducts = async (req, res) => {
   try {
+    let response ={
+      products: products,
+      count: products.length
+    }
     res.status(200).json(products);
   } catch (error) {
-    res.status(500).json({ message: 'Error al obtener productos: ' + error.message });
+    console.error(error);
+    return res.status(500).json({ message: 'Error al obtener productos: ' + error.message });
   }
 };
+
+
+
+// GET - Producto por ID
+export const getProductById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = products.find(p => p.id === id);
+    if (!product) {
+      return res.status(404).json({ message: 'Producto no encontrado' });
+    }
+    res.status(200).json(product);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Error al obtener producto: ' + error.message });
+  }
+}
 
 
 
 //POST -Productos
 export const createProduct = async (req, res) => {
   try {
-    const productData = req.body;
-    const newProduct = { id: `PRD-${uuidv4().slice(0, 8)}`, ...productData };
+    
+    const newProduct = req.body;
+    const product = products.find(p => p.id === newProduct.id);
+    let response = {}
+    
+    if (product) {
+      response = { message: 'El producto ya existe' };
+      return res.status(400).json(response);
+    }
+
+    if (newProduct.productName === undefined || newProduct.productName === '') {
+      response = { message: 'El nombre del producto es obligatorio' };
+      return res.status(400).json(response);
+    }
+
     products.push(newProduct);
-    res.status(201).json(newProduct);
+    
+    response = {
+      message: 'Producto creado exitosamente',
+      product: newProduct
+    };
+    return res.status(201).json(response);
   } catch (error) {
-    res.status(400).json({ message: 'Error al crear producto: ' + error.message });
+    console.error(error);
+    return res.status(500).json({ message: 'Error al crear producto: ' + error.message });
   }
 };
 
+
+
+// PUT - Productos
 export const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
@@ -42,6 +86,9 @@ export const updateProduct = async (req, res) => {
   }
 };
 
+
+
+// DELETE - Productos
 export const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;

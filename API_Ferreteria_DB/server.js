@@ -1,6 +1,6 @@
 //Imports de dependencias
 import express from 'express'; 
-//import routes from './routes/index.route.js';
+import routes from './routes/index.route.js';
 
 // Importación de rutas
 // const productRoutes = require('./routes/product.routes.js');
@@ -12,8 +12,7 @@ const port = 3001;
 app.use(express.json());
 
 // Configuración de las rutas
-// app.use('/api/products', productRoutes);
-// app.use('/api/suppliers', supplierRoutes);
+app.use('/',routes);
 
 //Error del servidor si falla
 app.use((err, req, res, next) => {

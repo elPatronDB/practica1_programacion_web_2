@@ -1,17 +1,13 @@
-let products = [];
-let suppliers = [];
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-import('../mock-data/products.json').then(module => {
-  products = module.default;
-}).catch(err => {
-  console.error('Error al cargar products.json:', err);
-});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-import('../mock-data/suppliers.json').then(module => {
-  suppliers = module.default;
-}).catch(err => {
-  console.error('Error al cargar suppliers.json:', err);
-});
+const products = JSON.parse(readFileSync(join(__dirname, '../mock-data/products.json'), 'utf8'));
+const suppliers = JSON.parse(readFileSync(join(__dirname, '../mock-data/suppliers.json'), 'utf8'));
+
 // GET - Productos
 export const getProducts = async (req, res) => {
   try {

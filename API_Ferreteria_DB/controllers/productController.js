@@ -1,21 +1,30 @@
-import { products } from  '../mock-data/products.json' assert { type: 'json' };
+let products = [];
+let suppliers = [];
 
+import('../mock-data/products.json').then(module => {
+  products = module.default;
+}).catch(err => {
+  console.error('Error al cargar products.json:', err);
+});
 
+import('../mock-data/suppliers.json').then(module => {
+  suppliers = module.default;
+}).catch(err => {
+  console.error('Error al cargar suppliers.json:', err);
+});
 // GET - Productos
 export const getProducts = async (req, res) => {
   try {
-    let response ={
+    let response = {
       products: products,
       count: products.length
-    }
+    };
     res.status(200).json(response);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Error al obtener productos: ' + error.message });
   }
 };
-
-
 
 // GET - Producto por ID
 export const getProductById = async (req, res) => {
@@ -30,24 +39,21 @@ export const getProductById = async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: 'Error al obtener producto: ' + error.message });
   }
-}
+};
 
-
-
-//POST -Productos
+// POST - Productos
 export const createProduct = async (req, res) => {
   try {
-    
     const newProduct = req.body;
     const product = products.find(p => p.id === newProduct.id);
-    let response = {}
-    
+    let response = {};
+
     if (product) {
       response = { message: 'El producto ya existe' };
       return res.status(400).json(response);
     }
 
-    if (newProduct.productName === undefined || newProduct.productName === '') {
+    if (newProduct.name === undefined || newProduct.name === '') {
       response = { message: 'El nombre del producto es obligatorio' };
       return res.status(400).json(response);
     }
@@ -65,8 +71,6 @@ export const createProduct = async (req, res) => {
   }
 };
 
-
-
 // PUT - Productos
 export const updateProduct = async (req, res) => {
   try {
@@ -82,11 +86,10 @@ export const updateProduct = async (req, res) => {
     products[index] = { ...products[index], ...productData };
     res.status(200).json(products[index]);
   } catch (error) {
-    res.status(400).json({ message: 'Error al actualizar producto: ' + error.message });
+    console.error(error);
+    return res.status(400).json({ message: 'Error al actualizar producto: ' + error.message });
   }
 };
-
-
 
 // DELETE - Productos
 export const deleteProduct = async (req, res) => {
@@ -99,6 +102,7 @@ export const deleteProduct = async (req, res) => {
     products.splice(index, 1);
     res.status(204).send();
   } catch (error) {
-    res.status(500).json({ message: 'Error al eliminar producto: ' + error.message });
+    console.error(error);
+    return res.status(500).json({ message: 'Error al eliminar producto: ' + error.message });
   }
 };

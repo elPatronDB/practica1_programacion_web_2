@@ -8,7 +8,7 @@ export const getProducts = async (req, res) => {
       products: products,
       count: products.length
     }
-    res.status(200).json(products);
+    res.status(200).json(response);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Error al obtener productos: ' + error.message });
